@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * print_listint - prints all elements of a listint_t list
- * @h: pointer to head of list
- * Return: number of nodes
+ * check_cycle - chech for cycle in loinked list
+ * @list: pointer to head of list
+ * Return: 1 if coincidence 0 else
  */
 int check_cycle(listint_t *list)
 {
