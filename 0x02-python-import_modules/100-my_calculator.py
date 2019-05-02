@@ -8,15 +8,14 @@ if __name__ == "__main__":
     else:
         a = int(argv[1])
         b = int(argv[3])
-        symbol = argv[2]
 
-        if symbol == "+":
+        if argv[2] == "+":
             print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
-        elif symbol == "-":
+        elif argv[2] == "-":
             print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
-        elif symbol == "*":
+        elif argv[2] == "*":
             print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
-        elif symbol == "/":
+        elif argv[2] == "/":
             print("{:d} / {:d} = {:f}".format(a, b, div(a, b)))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
