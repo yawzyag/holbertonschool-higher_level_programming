@@ -28,8 +28,7 @@ size_t listint_len(const listint_t *h)
 int is_palindrome(listint_t **head)
 {
 	int len, i, j;
-	int arr[100];
-
+	int arr[1000000];
 	len = listint_len(*head);
 	for (i = 0; i <= len - 1; i++)
 	{
