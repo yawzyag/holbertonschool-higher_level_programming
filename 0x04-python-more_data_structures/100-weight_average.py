@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
-    if my_list is not [] and my_list is not None:
+    if my_list and my_list is not None:
         num1 = 0
         num2 = 0
         for tuple_1 in my_list:
