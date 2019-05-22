@@ -78,13 +78,13 @@ class Square:
         """ print square """
         listm = []
         if self.__size is 0:
-             listm.append("\n")
+            listm.append("")
         else:
             for i in range(self.__position[1]):
-                 listm.append("\n")
+                listm.append("\n")
             for i in range(0, self.__size):
                 if self.__position[0]:
-                     listm.append(" " * self.__position[0])
+                    listm.append(" " * self.__position[0])
                 listm.append("#" * self.__size)
                 if i < self.__size - 1:
                     listm.append("\n")
