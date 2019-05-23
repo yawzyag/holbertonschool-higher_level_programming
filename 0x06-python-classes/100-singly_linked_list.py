@@ -11,6 +11,10 @@ class Node:
     def data(self):
         return self.__data
 
+    @property
+    def next_node(self):
+        return self.__next_node
+
     @data.setter
     def data(self, value):
         if type(value) is not int:
@@ -18,14 +22,10 @@ class Node:
         else:
             self.__data = value
 
-    @property
-    def next_node(self):
-        return self.__next_node
-
     @next_node.setter
     def next_node(self, value):
-        if type(value) is not Node or value is not None:
-            raise TypeError("data must be an integer")
+        if value is not None and not isinstance(value, Node):
+            raise TypeError("next_node must be a Node object")
         else:
             self.__next_node = value
 
@@ -35,10 +35,19 @@ class SinglyLinkedList:
         self.__head = None
 
     def sorted_insert(self, value):
-        new_node = self.__head
-        if self.__head is None:
-            self.__head = new_node
+        holi = Node(value, self.__head)
+        if self.__head is None or value < self.__head.data:
+            self.__head = holi
         else:
-            while new_node.next_node is not None:
-                new_node = new_node.next_node
-            new_node.next_node = Node(value, new_node)
+            while holi.next_node is not None and holi.next_node.data < value:
+                holi = holi.next_node
+            holi.next_node = Node(value, holi.next_node)
+
+    def __str__(self):
+        listm = []
+        nodes = self.__head
+
+        while nodes is not None:
+            listm.append(str(nodes.data))
+            nodes = nodes.next_node
+        return "\n".join(listm)
