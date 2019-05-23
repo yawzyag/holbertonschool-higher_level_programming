@@ -35,7 +35,6 @@ class SinglyLinkedList:
         self.__head = None
 
     def sorted_insert(self, value):
-        print("val is {}",format(value))
         if self.__head is None or value <= self.__head.data:
             self.__head = Node(value, self.__head)
         else:
