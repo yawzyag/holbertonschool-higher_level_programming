@@ -35,10 +35,11 @@ class SinglyLinkedList:
         self.__head = None
 
     def sorted_insert(self, value):
-        holi = Node(value, self.__head)
-        if self.__head is None or value < self.__head.data:
-            self.__head = holi
+        print("val is {}",format(value))
+        if self.__head is None or value <= self.__head.data:
+            self.__head = Node(value, self.__head)
         else:
+            holi = Node(value, self.__head)
             while holi.next_node is not None and holi.next_node.data < value:
                 holi = holi.next_node
             holi.next_node = Node(value, holi.next_node)
