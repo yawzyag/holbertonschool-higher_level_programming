@@ -1,0 +1,60 @@
+# doctest_in_help.txt
+===============================
+ How to Use doctest_in_help.py
+===============================
+
+This library is very simple, since it only has one function called
+``my_function()``.
+
+Numbers
+=======
+
+``my_function()`` returns the product of its arguments.  For numbers,
+that value is equivalent to using the ``*`` operator.
+
+::
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+It also works with floating-point values.
+
+::
+
+    >>> matrix_divided(matrix, -3)
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+
+Non-Numbers
+===========
+
+Because ``*`` is also defined on data types other than numbers,
+``my_function()`` works just as well if one of the arguments is a
+string, a list, or a tuple.
+
+::
+
+    >>> matrix = [[1,2,3],["a",1,1]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+    >>> matrix = [[1,2,3],[1,1,1,1]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = [[1,2,3],[1,1,1]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    >>> matrix = [[],[]]
+    >>> matrix_divided(matrix, 3)
+    [[], []]
