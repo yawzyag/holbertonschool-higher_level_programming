@@ -17,7 +17,7 @@ def text_indentation(text):
     """function to add two numbers.
        I dont know
     """
-    delimiters = '.:?'
+    delimiters = [":", "?", "."]
     for srr in delimiters:
         txt = spliter(text, srr)
         text = (srr + "\n\n").join(txt)
