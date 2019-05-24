@@ -62,18 +62,12 @@ that value is equivalent to using the ``*`` operator.
     .
     <BLANKLINE>
 
-    >>> text_indentation("        .?: : ? .             ")
+    >>> text_indentation("        .?:             ")
     .
     <BLANKLINE>
     ?
     <BLANKLINE>
     :
-    <BLANKLINE>
-    :
-    <BLANKLINE>
-    ?
-    <BLANKLINE>
-    .
     <BLANKLINE>
 
 

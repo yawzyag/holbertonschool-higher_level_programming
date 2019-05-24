@@ -17,6 +17,8 @@ def text_indentation(text):
     """function to add two numbers.
        I dont know
     """
+    if type(text) is not str:
+        raise TypeError("text must be a string")
     delimiters = [":", "?", "."]
     for srr in delimiters:
         txt = spliter(text, srr)
