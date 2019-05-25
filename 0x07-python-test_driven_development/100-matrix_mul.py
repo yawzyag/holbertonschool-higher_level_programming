@@ -16,9 +16,9 @@ def matrix_mul(m_a, m_b):
     if not any(isinstance(el, list) for el in m_b):
         raise TypeError("m_b must be a list of lists")
     if any(len(list(el)) is 0 for el in m_a or len(m_a) is 0):
-        raise TypeError("m_a can't be empty")
+        raise ValueError("m_a can't be empty")
     if any(len(list(el)) is 0 for el in m_b or len(m_b) is 0):
-        raise TypeError("m_b can't be empty")
+        raise ValueError("m_b can't be empty")
     list1 = []
     err1 = "each row of m_b must should be of the same size"
     err2 = "m_a should contain only integers or floats"
