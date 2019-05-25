@@ -83,3 +83,12 @@ string, a list, or a tuple.
     >>> add_integer(-float("inf"), float("inf"))
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
+
+
+    >>> type(add_integer(10e500**2, 1))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> type(add_integer(float('nan'), -2))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
