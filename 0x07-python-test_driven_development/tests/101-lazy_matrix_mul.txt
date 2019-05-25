@@ -66,9 +66,6 @@ string, a list, or a tuple.
 
 
 
-	>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[[1], 2], [3, 4]])) #doctest: +IGNORE_EXCEPTION_DETAIL
-	Traceback (most recent call last):
-	TypeError: bla bla bla...
 
 
 	>>> print(lazy_matrix_mul([[1, 2, 3], [3, 4]], [[1, 2], [3, 4]])) #doctest: +IGNORE_EXCEPTION_DETAIL
