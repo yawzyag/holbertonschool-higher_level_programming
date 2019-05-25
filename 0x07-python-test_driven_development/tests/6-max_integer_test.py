@@ -47,6 +47,30 @@ class TestMaxInteger(unittest.TestCase):
         list = [1, 2, 3, 4]
         self.assertFalse(max_integer(list) == 2)
 
+    def test_max_integer(self):
+        """ test for 1 item
+        Args:
+            cases
+        """
+        list = [8, 2, 3, 4]
+        self.assertEqual(max_integer(list), 8)
+
+    def test_midd_integer(self):
+        """ test for 1 item
+        Args:
+            cases
+        """
+        list = [8, 2, 10, 4, 1]
+        self.assertEqual(max_integer(list), 10)
+
+    def test_empty_integer(self):
+        """ test for 1 item
+        Args:
+            cases
+        """
+        list = []
+        self.assertEqual(max_integer(list), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
