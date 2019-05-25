@@ -33,6 +33,6 @@ def matrix_divided(matrix, div):
         if row_len is not len(row):
             raise TypeError("Each row of the matrix must have the same size")
         for x in row:
-            temp = list(map(lambda x: round((x / div), 2) , row))
+            temp = list(map(lambda x: round((x / div), 2), row))
         n_matrix.append(temp)
     return n_matrix
