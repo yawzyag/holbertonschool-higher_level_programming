@@ -22,6 +22,12 @@ that value is equivalent to using the ``*`` operator.
     >>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
     [[13 16]]
 
+	>>> print(lazy_matrix_mul([[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]],[[10], [11], [12], [13], [14], [15], [16], [17], [18], [19]]))
+	[[735]]
+
+	>>> print(lazy_matrix_mul([[1]], [[1]]))
+	[[1]]
+
 Non-Numbers
 ===========
 
@@ -31,47 +37,61 @@ string, a list, or a tuple.
 
 ::
 
-	>>> print(lazy_matrix_mul([[]], [[], []])) #doctest: +IGNORE_EXCEPTION_DETAIL
+
+	>>> print(lazy_matrix_mul([], [[1, 2], [3, 4]])) # doctest: +IGNORE_EXCEPTION_DETAIL
 	Traceback (most recent call last):
-	ValueError: matmul: Input operand 1 has a mismatch in its
+	ValueError: bla bla bla...
 
-	>>> print(lazy_matrix_mul([[2, 1]], [[], []]))
-	[]
 
-	>>> print(lazy_matrix_mul((), [[], []])) #doctest: +IGNORE_EXCEPTION_DETAIL
+
+	>>> print(lazy_matrix_mul([[]], [[1, 2], [3, 4]]))  # doctest: +IGNORE_EXCEPTION_DETAIL
 	Traceback (most recent call last):
-	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 0)
+	ValueError: bla bla bla...
 
 
-	>>> print(lazy_matrix_mul([[]], ())) #doctest: +IGNORE_EXCEPTION_DETAIL
-	[0.]
-
-	>>> print(lazy_matrix_mul([()], [[]])) #doctest: +IGNORE_EXCEPTION_DETAIL
+	>>> print(lazy_matrix_mul([[1, 2], [3, 4]], []))  # doctest: +IGNORE_EXCEPTION_DETAIL
 	Traceback (most recent call last):
-	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 0)
+	ValueError: bla bla bla...
 
 
-	>>> print(lazy_matrix_mul([[]], [()])) #doctest: +IGNORE_EXCEPTION_DETAIL
+
+	>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[]]))  # doctest: +IGNORE_EXCEPTION_DETAIL
 	Traceback (most recent call last):
-	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 0)
+	ValueError: bla bla bla...
 
-	>>> print(lazy_matrix_mul([[1,2,3],[1,2,3]], [[1,2,3],[1,2,"2"],[1,2,3]])) #doctest: +IGNORE_EXCEPTION_DETAIL
+
+	>>> print(lazy_matrix_mul([[1, "hola"], [3, 4]], [[1, 2], [3, 4]])) #doctest: +IGNORE_EXCEPTION_DETAIL
 	Traceback (most recent call last):
-	TypeError: ufunc 'matmul' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
+	TypeError: bla bla bla...
 
-	>>> print(lazy_matrix_mul([[1,2,"3"],[1,2,3]], [[1,2,3],[1,2,3],[1,2,3]])) #doctest: +IGNORE_EXCEPTION_DETAIL
+
+
+	>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[[1], 2], [3, 4]])) #doctest: +IGNORE_EXCEPTION_DETAIL
 	Traceback (most recent call last):
-	TypeError: ufunc 'matmul' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
+	ValueError: bla bla bla...
 
-	>>> print(lazy_matrix_mul([[1,2,3],[1,2]], [[1,2,3],[1,2,3],[1,2,3]])) #doctest: +IGNORE_EXCEPTION_DETAIL
+
+	>>> print(lazy_matrix_mul([[1, 2, 3], [3, 4]], [[1, 2], [3, 4]])) #doctest: +IGNORE_EXCEPTION_DETAIL
 	Traceback (most recent call last):
-	ValueError: matmul: Input operand 1 has a mi(size 3 is different from 2)
+	ValueError: bla bla bla...
 
-	>>> print(lazy_matrix_mul([[1,2,3],[1,2,3]], [[1,2,3],[1,2],[1,2,3]])) #doctest: +IGNORE_EXCEPTION_DETAIL
+	>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3]])) #doctest: +IGNORE_EXCEPTION_DETAIL
 	Traceback (most recent call last):
-	TypeError: ufunc 'matmul' not supported fpes according to the casting rule ''safe''
+	ValueError: bla bla bla...
 
-	>>> print(lazy_matrix_mul([[2,3],[1,2,3]], [[1,2,3],[1,2],[1,2,3]])) #doctest: +IGNORE_EXCEPTION_DETAIL
+
+
+	>>> print(lazy_matrix_mul([[1, 2, 3], [3, 4, 5], [5, 6, 7]], [[1, 2], [3, 4]])) # doctest: +IGNORE_EXCEPTION_DETAIL
 	Traceback (most recent call last):
-	ValueError: matmul: Input operand 1 has a mismatch infferent from 2)
+	ValueError: bla bla bla...
 
+
+	>>> print(lazy_matrix_mul([[1]])) #doctest: +IGNORE_EXCEPTION_DETAIL
+	Traceback (most recent call last):
+	TypeError: bla bla bla...
+
+
+
+	>>> print(lazy_matrix_mul()) #doctest: +IGNORE_EXCEPTION_DETAIL
+	Traceback (most recent call last):
+	TypeError: bla bla bla...
