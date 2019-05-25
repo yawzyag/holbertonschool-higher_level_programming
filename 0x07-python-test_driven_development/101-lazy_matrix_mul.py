@@ -5,6 +5,7 @@
 """
 import numpy as np
 
+
 def lazy_matrix_mul(m_a, m_b):
     """multiplin whit numpy
     args
@@ -23,9 +24,9 @@ def lazy_matrix_mul(m_a, m_b):
     if not any(isinstance(el, list) for el in m_b):
         raise TypeError("m_b must be a list of lists")
     if any(len(list(el)) is 0 for el in m_a or len(m_a) is 0):
-       raise TypeError("m_a can't be empty")
+        raise TypeError("m_a can't be empty")
     if any(len(list(el)) is 0 for el in m_b or len(m_b) is 0):
-       raise TypeError("m_b can't be empty")
+        raise TypeError("m_b can't be empty")
     list1 = []
     err1 = "each row of m_b must should be of the same size"
     err2 = "m_a should contain only integers or floats"
@@ -34,14 +35,14 @@ def lazy_matrix_mul(m_a, m_b):
     row_lenb = len(m_b[0])
     if row_lena is not len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-    for i in range(0,len(m_a)):
+    for i in range(0, len(m_a)):
         if row_lena is not len(m_a[i]):
             raise TypeError("each row of m_a must should be of the same size")
-        temp=[]
-        for j in range(0,len(m_b[0])):
+        temp = []
+        for j in range(0, len(m_b[0])):
             if row_lenb is not len(m_b[j]):
                 raise TypeError(err1)
-            for k in range(0,len(m_a[0])):
+            for k in range(0, len(m_a[0])):
                 if type(m_a[i][k]) is not int and type(m_a[i][k]) is not float:
                     raise TypeError(err2)
                 if type(m_b[k][j]) is not int and type(m_b[k][j]) is not float:
