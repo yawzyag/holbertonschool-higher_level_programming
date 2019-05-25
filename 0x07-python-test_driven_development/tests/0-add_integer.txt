@@ -18,6 +18,16 @@ that value is equivalent to using the ``*`` operator.
     >>> add_integer(2, 3)
     5
 
+::
+
+    >>> add_integer(2.0, 3.0)
+    5
+
+::
+
+    >>> add_integer(2, 3.0)
+    5
+
 It also works with floating-point values.
 
 ::
