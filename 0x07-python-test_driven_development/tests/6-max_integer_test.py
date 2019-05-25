@@ -69,7 +69,7 @@ class TestMaxInteger(unittest.TestCase):
             cases
         """
         list = []
-        self.assertEqual(max_integer(list), 1)
+        self.assertEqual(max_integer(list), None)
 
 
 if __name__ == '__main__':
