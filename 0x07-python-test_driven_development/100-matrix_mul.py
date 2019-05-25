@@ -25,15 +25,19 @@ def matrix_mul(m_a, m_b):
     err3 = "m_b should contain only integers or floats"
     row_lena = len(m_a[0])
     row_lenb = len(m_b[0])
+    for i in range(0, len(m_a)):
+        if row_lena is not len(m_a[i]):
+            raise TypeError("each row of m_a must should be of the same size")
     if row_lena is not len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
+    for mb in range(len(m_b)):
+            if row_lenb is not len(m_b[mb]):
+                raise TypeError(err1)
     for i in range(0, len(m_a)):
         if row_lena is not len(m_a[i]):
             raise TypeError("each row of m_a must should be of the same size")
         temp = []
         for j in range(0, len(m_b[0])):
-            if row_lenb is not len(m_b[j]):
-                raise TypeError(err1)
             result = 0
             for k in range(0, len(m_a[0])):
                 if type(m_a[i][k]) is not int and type(m_a[i][k]) is not float:
