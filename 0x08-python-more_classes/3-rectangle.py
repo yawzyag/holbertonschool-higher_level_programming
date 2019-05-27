@@ -25,7 +25,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Example of docstring on the __init__ method.
+        """Height setter.
          Args:
              value (int): Size of the square obj.
          """
@@ -42,7 +42,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Example of docstring on the __init__ method.
+        """height setter.
         Args:
              value (int): Size of the square obj.
         """
@@ -51,3 +51,29 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """ area of rectangle """
+        return self.__height * self.__width
+
+    def perimeter(self):
+        """ perimetro of square """
+        if self.__height is 0 or self.__width is 0:
+            return 0
+        return (self.__height * 2 + self.__width * 2)
+
+    def __str__(self):
+        """ print str rectangle """
+        listm = []
+        if self.__width is 0 or self.__height is 0:
+            listm.append("")
+        else:
+            for i in range(self.__height):
+                listm.append("#" * self.__width)
+                if i < self.__height - 1:
+                    listm.append("\n")
+        return ("".join(listm))
+
+    def __repr__(self):
+        return '<{0}.{1} object at {2}>'.format(
+            self.__module__, type(self).__name__, hex(id(self)))
