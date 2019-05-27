@@ -61,15 +61,3 @@ class Rectangle:
         if self.__height is 0 or self.__width is 0:
             return 0
         return (self.__height * 2 + self.__width * 2)
-
-    def __str__(self):
-        """ print str rectangle """
-        listm = []
-        if self.__width is 0 or self.__height is 0:
-            listm.append("")
-        else:
-            for i in range(self.__height):
-                listm.append("#" * self.__width)
-                if i < self.__height - 1:
-                    listm.append("\n")
-        return ("".join(listm))
