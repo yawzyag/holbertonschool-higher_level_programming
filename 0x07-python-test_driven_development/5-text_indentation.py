@@ -6,13 +6,6 @@
 """
 
 
-def spliter(strin, deli):
-    temp = []
-    texto = strin.split(deli)
-    for txt in texto:
-        temp.append(txt.strip())
-    return(temp)
-
 def text_indentation(text):
     """function to add two numbers.
        I dont know
@@ -20,11 +13,6 @@ def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
     delimiters = [":", "?", "."]
-    for srr in delimiters:
-        txt = spliter(text, srr)
-        text = (srr + "\n\n").join(txt)
-    print("{}".format(str(text)), end="")
-
-    if len(text) > 0 and text[-1] in delimiters:
-        print("")
-        print("")
+    for deli in delimiters:
+        text = text.replace(deli, deli + "\n\n")
+    print("\n".join(txt.strip() for txt in text.split("\n")), end="")
