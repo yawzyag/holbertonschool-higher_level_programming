@@ -10,6 +10,7 @@ class Rectangle:
 
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Example of docstring on the __init__ method.
@@ -72,7 +73,7 @@ class Rectangle:
             listm.append("")
         else:
             for i in range(self.__height):
-                listm.append("#" * self.__width)
+                listm.append("{}".format(self.print_symbol) * self.__width)
                 if i < self.__height - 1:
                     listm.append("\n")
         return ("".join(listm))
