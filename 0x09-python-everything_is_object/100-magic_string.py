@@ -1,6 +1,4 @@
 #!/usr/bin/python
-a = ["Holberton"]
-def magic_string():
-    a.append(a)
-    print(co_firstlineno)
-    return "".join(a)
+def magic_string(Juanito=[0]):
+    Juanito[0] += 1
+    return ("Holberton, " * Juanito[0]) [:-2]
