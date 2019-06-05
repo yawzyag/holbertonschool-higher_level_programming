@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 class MyInt(int):
     def __init__(self, num):
         self.num = num
