@@ -1,0 +1,106 @@
+===============================
+ my_list.py
+===============================
+
+Execute using: 
+    Short:
+        python3 -m doctest -v ./tests/1-my_list.txt | tail -2
+    Detailed:
+        python3 -m doctest -v ./tests/1-my_list.txt
+    
+
+Test 0. Loading the module
+=======
+
+    >>> MyList = __import__('1-my_list').MyList
+
+
+Test 1. Adding integers
+=======
+
+    >>> lista = MyList()
+    >>> lista.append(100)
+    >>> lista.append(-98)
+    >>> lista.append(25)
+    >>> lista.append(37)
+    >>> print(lista)
+    [100, -98, 25, 37]
+    >>> lista.print_sorted(lista)
+    [-98, 25, 37, 100]
+
+
+Test 2. Adding float numbers
+=======
+
+    >>> lista = MyList()
+    >>> lista.append(0)
+    >>> lista.append(-1.1)
+    >>> lista.append(1.1)
+    >>> print(lista)
+    [0, -1.1, 1.1]
+    >>> lista.print_sorted(lista)
+    [-1.1, 0, 1.1]
+
+
+Test 3. Adding chars
+=======
+    >>> lista = MyList()
+    >>> lista.appendista.append('a')
+    >>> lista.append('b')
+    >>> lista.append('e')
+    >>> lista.append('c')
+    >>> lista.append('d')
+    >>> print(lista)
+    ['a', 'b', 'e', 'c', 'd']
+    >>> lista.print_sorted(lista)
+    ['a', 'b', 'c', 'd', 'e']
+
+
+Test 4. Adding different types
+=======
+    >>> lista = MyList()
+    >>> lista.append("Hola")
+    >>> lista.append("Mundo")
+    >>> lista.append('e')
+    >>> lista.append(9)
+    >>> lista.append((1,2))
+    >>> print(lista)
+    ['a', 'b', 'e', 'c', 'd']
+    >>> lista.print_sorted(lista)
+    ['a', 'b', 'c', 'd', 'e']
+
+
+Test 5. Adding different types
+=======
+    >>> lista = MyList()
+    >>> lista.appendista.append('u')
+    >>> lista.append(1)
+    >>> lista.append('o')
+    >>> lista.append(0)
+    >>> lista.append('i')
+    >>> lista.append(-4)
+    >>> lista.append('e')
+    >>> lista.append(2)
+    >>> lista.append('a')
+    >>> print(lista)
+    ['a', 'b', 'e', 'c', 'd']
+    >>> lista.print_sorted(lista)
+    ['a', 'b', 'c', 'd', 'e']
+
+
+Test 6. Prnting empty
+=======
+    >>> lista = MyList()
+    >>> print(lista)
+    ['a', 'b', 'e', 'c', 'd']
+    >>> lista.print_sorted(lista)
+    ['a', 'b', 'c', 'd', 'e']
+
+
+Test 7. Printing nothing
+=======
+    >>> lista = MyList()
+    >>> print()
+    ['a', 'b', 'e', 'c', 'd']
+    >>> lista.print_sorted(lista)
+    ['a', 'b', 'c', 'd', 'e']
