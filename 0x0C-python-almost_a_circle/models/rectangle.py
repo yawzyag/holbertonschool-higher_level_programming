@@ -2,6 +2,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -9,6 +10,39 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+
+    def area(self):
+        return self.__width * self.__height
+
+    def display(self):
+        """ print square """
+        if self.__width is 0:
+            print("")
+        else:
+            for i in range(self.__y):
+                print("")
+            for i in range(self.__height):
+                if self.__x:
+                    print(" " * self.__x, end="")
+                print("#" * self.__width)
+
+    def update(self, *args, **kwargs):
+        listm = ["id", "width", "height", "x", "y"]
+
+        if len(args) != 0:
+           for i in range(len(args)):
+               setattr(self, listm[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def __str__(self):
+        return ("[Rectangle] ({}) {}/{} - {}/{}".
+                format(self.id, self.__x, self.__y,
+                       self.__width, self.__height))
+
+    def to_dictionary(self):
+        return self.__dict__
 
     @property
     def width(self):
