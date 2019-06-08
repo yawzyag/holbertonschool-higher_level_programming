@@ -11,7 +11,17 @@ class Square(Rectangle):
                 .format(self.id, self.x, self.y, self.size))
 
     def update(self, *args, **kwargs):
-        super().update(*args, **kwargs)
+        listm = ["id", "size", "x", "y"]
+
+        if len(args) != 0:
+            for i in range(len(args)):
+                setattr(self, listm[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        return super().to_dictionary()
 
     @property
     def size(self):
