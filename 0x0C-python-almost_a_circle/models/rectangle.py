@@ -30,8 +30,8 @@ class Rectangle(Base):
         listm = ["id", "width", "height", "x", "y"]
 
         if len(args) != 0:
-           for i in range(len(args)):
-               setattr(self, listm[i], args[i])
+            for i in range(len(args)):
+                setattr(self, listm[i], args[i])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
@@ -42,7 +42,8 @@ class Rectangle(Base):
                        self.__width, self.__height))
 
     def to_dictionary(self):
-        return self.__dict__
+        return {'x': self.__x, 'y': self.__y, 'id': self.id,
+            'height': self.__height, 'width': self.__width}
 
     @property
     def width(self):

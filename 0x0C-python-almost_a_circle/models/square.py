@@ -21,7 +21,8 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        return super().to_dictionary()
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+            'size': self.height}
 
     @property
     def size(self):
