@@ -59,14 +59,29 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         filename = "{}.csv".format(cls.__name__)
-        for 
+        if cls.__name__ == "Rectangle":
+            text = ["width", "height", "x", "y", "id"]
+        elif cls.__name__ == "Square":
+            text = ["size", "x", "y", "id"]
 
         with open(filename, 'w') as csvFile:
-            fields = ['mountain', 'height']
-            writer = csv.DictWriter(csvFile, fieldnames=fields)
-            writer.writeheader()
-            writer.writerows(list_objs)
+            writer = csv.DictWriter(csvFile, fieldnames=text)
+            if list_objs is not None:
+                writer.writeheader()
+                for text1 in list_objs:
+                    writer.writerow(text1.to_dictionary())
+            else:
+                writer.writerow([[]])
 
     @classmethod
     def load_from_file_csv(cls):
-        print(cls.__name__)
+        filename = "{}.csv".format(cls.__name__)
+        listm = []
+
+        with open(filename, newline="") as csvFile:
+            read = csv.DictReader(csvFile)
+            for row in read:
+                for k, v in row.items():
+                    row[k] = int(v)
+                listm.append(row)
+        return [cls.create(**oj) for oj in listm]
