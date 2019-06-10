@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import csv
 
 
 class Base:
@@ -54,3 +55,18 @@ class Base:
         for i, j in enumerate(listm):
             listm[i] = cls.create(**listm[i])
         return listm
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = "{}.csv".format(cls.__name__)
+        for 
+
+        with open(filename, 'w') as csvFile:
+            fields = ['mountain', 'height']
+            writer = csv.DictWriter(csvFile, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        print(cls.__name__)
