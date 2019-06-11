@@ -6,6 +6,7 @@ import random
 """ rectangle
 """
 
+
 class Base:
     __nb_objects = 0
 
