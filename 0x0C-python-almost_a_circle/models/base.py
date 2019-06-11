@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import json
 import csv
+import turtle
+import random
 
 
 class Base:
@@ -18,6 +20,55 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        ventana = turtle.Screen()
+        lapiz = turtle.Turtle()
+
+        lapiz.pensize(2)
+
+        for info in list_rectangles:
+            R = random.random()
+            B = random.random()
+            G = random.random()
+            lapiz.color(R, G, B)
+            print(info.x)
+            lapiz.up()
+            lapiz.setx(info.x)
+            lapiz.sety(info.y)
+            lapiz.down()
+            lapiz.begin_fill()
+            for i in range(2):
+                lapiz.forward(info.width)
+                lapiz.right(90)
+                lapiz.forward(info.height)
+                lapiz.right(90)
+            lapiz.end_fill()
+
+        for info in list_squares:
+            R = random.random()
+            B = random.random()
+            G = random.random()
+            lapiz.color(R, G, B)
+            print(info.x)
+            lapiz.up()
+            lapiz.setx(info.x)
+            lapiz.sety(info.y)
+            lapiz.down()
+            lapiz.begin_fill()
+            for i in range(2):
+                lapiz.forward(info.width)
+                lapiz.right(90)
+                lapiz.forward(info.height)
+                lapiz.right(90)
+            lapiz.end_fill()
+        ventana.exitonclick()
+        """
+        t = turtle.Turtle()
+        t.forward(100)
+        turtle.done()
+        """
 
     @staticmethod
     def from_json_string(json_string):
