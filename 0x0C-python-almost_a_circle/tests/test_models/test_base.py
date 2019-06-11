@@ -25,6 +25,17 @@ class TestStringMethods(unittest.TestCase):
                          "Found code style errors (and warning).")
 
 
+class TestBaseClass(unittest.TestCase):
+    """
+    Setupclass
+
+    #Test id
+
+    #Test json
+    """
+    pass
+
+
 class TestFib(unittest.TestCase):
 
     def setUp(self):
