@@ -3,12 +3,16 @@ import json
 import csv
 import turtle
 import random
-
+""" rectangle
+"""
 
 class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        class to create a rectangle object
+        """
         if id is not None:
             self.id = id
         else:
@@ -17,12 +21,18 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        class to create a rectangle object
+        """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """
+        class to create a rectangle object
+        """
         ventana = turtle.Screen()
         lapiz = turtle.Turtle()
 
@@ -72,12 +82,18 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        class to create a rectangle object
+        """
         if json_string is None:
             return []
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        class to create a rectangle object
+        """
         listm = []
         if list_objs is not None:
             for info in list_objs:
@@ -89,6 +105,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        class to create a rectangle object
+        """
         if cls.__name__ == "Rectangle":
             text = cls(1, 1)
         elif cls.__name__ == "Square":
@@ -98,6 +117,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """
+        class to create a rectangle object
+        """
         listm = []
         filename = "{}.json".format(cls.__name__)
         try:
@@ -111,6 +133,9 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """
+        class to create a rectangle object
+        """
         filename = "{}.csv".format(cls.__name__)
         if cls.__name__ == "Rectangle":
             text = ["width", "height", "x", "y", "id"]
@@ -128,6 +153,9 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """
+        class to create a rectangle object
+        """
         filename = "{}.csv".format(cls.__name__)
         listm = []
         try:
