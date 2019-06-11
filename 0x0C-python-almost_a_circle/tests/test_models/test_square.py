@@ -37,4 +37,13 @@ class TestSquareClass(unittest.TestCase):
 
     Test kwars
     """
-    pass
+    def setUp(self):
+        self.s1 = Square(5)
+        self.s2 = Square(2, 2)
+        self.s3 = Square(3, 1, 3)
+
+    def tearDown(self):
+        pass
+
+    def test_id(self):
+        self.assertEqual(self.s1.id, 21)
