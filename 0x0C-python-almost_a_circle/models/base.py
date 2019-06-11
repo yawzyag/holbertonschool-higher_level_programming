@@ -1,24 +1,17 @@
 #!/usr/bin/python3
+""" testing comments """
 import json
 import csv
 import turtle
 import random
-""" rectangle
-"""
 
 
 class Base:
-    """
-    coments of class
-
-    """
+    """ coments of class """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        class to create a rectangle object
-
-        """
+        """ class to create a rectangle object """
         if id is not None:
             self.id = id
         else:
