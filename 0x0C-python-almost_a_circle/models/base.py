@@ -100,11 +100,13 @@ class Base:
     def load_from_file(cls):
         listm = []
         filename = "{}.json".format(cls.__name__)
-
-        with open(filename, "r") as read_file:
-            listm = cls.from_json_string(read_file.read())
-        for i, j in enumerate(listm):
-            listm[i] = cls.create(**listm[i])
+        try:
+            with open(filename, "r") as read_file:
+                listm = cls.from_json_string(read_file.read())
+            for i, j in enumerate(listm):
+                listm[i] = cls.create(**listm[i])
+        except:
+            pass
         return listm
 
     @classmethod
@@ -128,11 +130,13 @@ class Base:
     def load_from_file_csv(cls):
         filename = "{}.csv".format(cls.__name__)
         listm = []
-
-        with open(filename, newline="") as csvFile:
-            read = csv.DictReader(csvFile)
-            for row in read:
-                for k, v in row.items():
-                    row[k] = int(v)
-                listm.append(row)
-        return [cls.create(**oj) for oj in listm]
+        try:
+            with open(filename, newline="") as csvFile:
+                read = csv.DictReader(csvFile)
+                for row in read:
+                    for k, v in row.items():
+                        row[k] = int(v)
+                    listm.append(row)
+            return [cls.create(**oj) for oj in listm]
+        except FileNotFoundError:
+            return [[]]
