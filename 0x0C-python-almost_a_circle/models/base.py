@@ -8,11 +8,16 @@ import random
 
 
 class Base:
+    """
+    coments of class
+
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
         """
         class to create a rectangle object
+
         """
         if id is not None:
             self.id = id
@@ -24,6 +29,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """
         class to create a rectangle object
+
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
@@ -33,6 +39,7 @@ class Base:
     def draw(list_rectangles, list_squares):
         """
         class to create a rectangle object
+
         """
         ventana = turtle.Screen()
         lapiz = turtle.Turtle()
@@ -85,6 +92,7 @@ class Base:
     def from_json_string(json_string):
         """
         class to create a rectangle object
+
         """
         if json_string is None:
             return []
@@ -94,6 +102,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """
         class to create a rectangle object
+
         """
         listm = []
         if list_objs is not None:
@@ -108,6 +117,7 @@ class Base:
     def create(cls, **dictionary):
         """
         class to create a rectangle object
+
         """
         if cls.__name__ == "Rectangle":
             text = cls(1, 1)
@@ -120,6 +130,7 @@ class Base:
     def load_from_file(cls):
         """
         class to create a rectangle object
+
         """
         listm = []
         filename = "{}.json".format(cls.__name__)
@@ -136,6 +147,7 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """
         class to create a rectangle object
+
         """
         filename = "{}.csv".format(cls.__name__)
         if cls.__name__ == "Rectangle":
@@ -156,6 +168,7 @@ class Base:
     def load_from_file_csv(cls):
         """
         class to create a rectangle object
+
         """
         filename = "{}.csv".format(cls.__name__)
         listm = []
