@@ -17,8 +17,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     result = session.query(State).order_by(asc(State.id)).first()
-
-    print("{}: {}".format(result.id, result.name))
+    if result:
+        print("{}: {}".format(result.id, result.name))
+    else:
+        print("Nothing")
     # for row in result:
     #    print("{}: {}".format(row.id, row.name))
     session.close()
