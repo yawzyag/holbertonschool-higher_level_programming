@@ -1,7 +1,8 @@
+#!/usr/bin/python3
+""" adding comentario """
 import MySQLdb
 from sys import argv
-B  # !/usr/bin/python3
-""" adding comentario """
+
 
 if __name__ == "__main__":
     serv = MySQLdb.connect(
