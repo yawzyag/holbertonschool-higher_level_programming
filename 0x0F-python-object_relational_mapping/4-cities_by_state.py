@@ -14,3 +14,4 @@ if __name__ == "__main__":
     for row in response:
         print("{}".format(row))
     c.close()
+    serv.close()

@@ -12,3 +12,4 @@ if __name__ == "__main__":
     for row in response:
         print(row)
     c.close()
+    serv.close()

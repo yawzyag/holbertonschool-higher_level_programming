@@ -1,7 +1,7 @@
-#!/usr/bin/python3
-""" adding comentario """
-from sys import argv
 import MySQLdb
+from sys import argv
+B  # !/usr/bin/python3
+""" adding comentario """
 
 if __name__ == "__main__":
     serv = MySQLdb.connect(
@@ -14,3 +14,4 @@ if __name__ == "__main__":
     for row in response:
         print(row)
     c.close()
+    serv.close()

@@ -17,3 +17,4 @@ if __name__ == "__main__":
         strings += item
     print(", ".join(strings))
     c.close()
+    serv.close()
