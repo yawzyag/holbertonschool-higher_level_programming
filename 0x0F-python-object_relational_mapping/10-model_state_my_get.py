@@ -17,7 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     result = session.query(State).filter(State.name == sys.argv[4]).all()
-    #print(type(result))
+    # print(type(result))
     if len(result) != 0:
         for row in result:
             print("{}".format(row.id))

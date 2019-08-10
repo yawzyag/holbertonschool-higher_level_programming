@@ -16,7 +16,8 @@ if __name__ == "__main__":
         pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).order_by(asc(State.id)).filter(State.name.like("%a%")).all()
+    result = session.query(State).order_by(
+        asc(State.id)).filter(State.name.like("%a%")).all()
 
     for row in result:
         print("{}: {}".format(row.id, row.name))

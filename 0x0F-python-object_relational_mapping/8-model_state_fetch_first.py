@@ -19,6 +19,6 @@ if __name__ == "__main__":
     result = session.query(State).order_by(asc(State.id)).first()
 
     print("{}: {}".format(result.id, result.name))
-    #for row in result:
+    # for row in result:
     #    print("{}: {}".format(row.id, row.name))
     session.close()
