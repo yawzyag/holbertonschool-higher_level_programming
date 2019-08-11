@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).all()
+    result = session.query(State).order_by(State.id).all()
     # now State have the conecction
     for row in result:
         print("{}: {}".format(row.id, row.name))
