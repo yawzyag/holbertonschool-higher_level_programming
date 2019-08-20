@@ -1,3 +1,3 @@
-#!/bin/bash
+B#!/bin/bash
 # holi
-curl -sL $1
+curl -sL "$1"

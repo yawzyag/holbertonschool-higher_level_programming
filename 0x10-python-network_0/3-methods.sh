@@ -1,3 +1,3 @@
-B#!/bin/bash
+BB#!/bin/bash
 # holi
-curl -sD - $1 | grep "Allow:" | cut -d" " -f2-
+curl -sD - "$1" | grep "Allow:" | cut -d" " -f2-

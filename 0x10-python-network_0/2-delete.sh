@@ -1,3 +1,3 @@
-#!/bin/bash
+B#!/bin/bash
 # holi
-curl -sX DELETE $1
+curl -sX DELETE "$1"
