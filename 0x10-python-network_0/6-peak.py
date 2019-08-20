@@ -8,16 +8,16 @@ def find_peak(list_of_integers):
         return None
     if len(list_of_integers) == 1:
         return 0
-    return list_of_integers[findPeakHelper(
+    return list_of_integers[find_recursive(
         list_of_integers, 0, len(list_of_integers) - 1)]
 
 
-def findPeakHelper(num, start, end):
-    span = end - start
-    # span of 1 indicates 2 elements
-    if span == 1:
-        return start if num[start] > num[end] else end
-    mid = start + span // 2
-    if num[mid] < num[mid + 1]:
-        return findPeakHelper(num, mid, end)
-    return findPeakHelper(num, start, mid)
+def find_recursive(arr, start, end):
+    """function recursive"""
+    num_m = end - start
+    if num_m == 1:
+        return start if arr[start] > arr[end] else end
+    mid = start + num_m // 2
+    if arr[mid] < arr[mid + 1]:
+        return find_recursive(arr, mid, end)
+    return find_recursive(arr, start, mid)
