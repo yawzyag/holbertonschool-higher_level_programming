@@ -1,6 +1,6 @@
 # Python - Network #0
 
-![database-python](https://cdn.lynda.com/course/772337/772337-636742488804326502-16x9.jpg)
+![database-python](https://pynet.twb-tech.com/static/img/python_logo.png)
 
 [Reference](https://www.tutorialspoint.com/python/python_networking.htm#)
 
