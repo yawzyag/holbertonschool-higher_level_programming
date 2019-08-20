@@ -1,13 +1,16 @@
 #!/usr/bin/python3
 """ adding comentario """
 
+
 def find_peak(list_of_integers):
     """find a peak"""
     if len(list_of_integers) == 0:
         return None
     if len(list_of_integers) == 1:
         return 0
-    return list_of_integers[findPeakHelper(list_of_integers, 0, len(list_of_integers) - 1)]
+    return list_of_integers[findPeakHelper(
+        list_of_integers, 0, len(list_of_integers) - 1)]
+
 
 def findPeakHelper(num, start, end):
     span = end - start
