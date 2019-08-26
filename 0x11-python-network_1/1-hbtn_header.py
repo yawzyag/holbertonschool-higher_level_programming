@@ -6,6 +6,6 @@ import urllib.request
 url = sys.argv[1]
 try:
     with urllib.request.urlopen(url) as response:
-        print(format(response.info()['X-Request-Id']))
+        print(response.info()['X-Request-Id'])
 except:
     pass
