@@ -4,8 +4,5 @@ from sys import argv
 import requests
 
 if __name__ == "__main__":
-    try:
-        r = requests.post(argv[1], data = {'key': argv[2]})
-        print(r.text)
-    except:
-        pass
+    r = requests.post(argv[1], data={'email': argv[2]})
+    print(r.text)
