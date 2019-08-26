@@ -4,6 +4,8 @@ import sys
 import urllib.request
 
 url = sys.argv[1]
-with urllib.request.urlopen(url) as response:
-    headers = response.info()
-    print('{}'.format(headers['X-Request-Id']))
+try:
+    with urllib.request.urlopen(url) as response:
+        print('{}'.format(response.info()['X-Request-Id']))
+except:
+    pass
