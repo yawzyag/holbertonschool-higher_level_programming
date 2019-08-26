@@ -9,7 +9,7 @@ if __name__ == "__main__":
         data = urllib.parse.urlencode({'email': email})
         data = data.encode('ascii')
         url = argv[1]
-        req = request.request.Request(url, data)
+        req = urllib.request.Request(url, data)
         with urllib.request.urlopen(req) as f:
             print(f.read().decode("utf-8"))
     except:
