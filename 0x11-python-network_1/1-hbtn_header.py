@@ -3,8 +3,8 @@
 import sys
 import urllib.request
 
-url = sys.argv[1]
 try:
+    url = sys.argv[1]
     with urllib.request.urlopen(url) as response:
         print(response.info()['X-Request-Id'])
 except:
