@@ -15,7 +15,7 @@ if __name__ == "__main__":
         print(i.get('name'))
         for film in i.get('films'):
             f = requests.get(film).json()
-            print("\t", f.get('title'))
+            print("\t{}".format(f.get('title')))
 
     while r.get('next'):
         r = requests.get(r.get('next')).json()
@@ -23,4 +23,4 @@ if __name__ == "__main__":
             print(i.get('name'))
             for film in i.get('films'):
                 f = requests.get(film).json()
-                print("\t", f.get('title'))
+                print("\t{}".format(f.get('title')))
