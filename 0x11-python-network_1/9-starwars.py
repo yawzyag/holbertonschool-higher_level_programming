@@ -10,6 +10,6 @@ if __name__ == "__main__":
     r = req.json()
     num = r.get('count')
 
-    print("Number of results:", num)
+    print("Number of results: {}".format(num))
     for i in r.get('results'):
         print(i.get('name'))
