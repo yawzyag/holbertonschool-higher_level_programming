@@ -9,6 +9,6 @@ if __name__ == "__main__":
     r = req.json()
     for i in range(10):
         print(
-            "{} {}".format(
+            "{}: {}".format(
                 r[i].get("sha"),
                 r[i].get("commit").get("author").get("name")))
