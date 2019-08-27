@@ -7,16 +7,16 @@ if __name__ == "__main__":
     if len(argv) < 2:
         payload = {'q': ''}
     else:
-        url = "http://0.0.0.0:5000/search_user"
         payload = {'q': argv[1]}
+
+    url = "http://0.0.0.0:5000/search_user"
+    req = requests.post(url, payload)
     try:
-        r = requests.post(url, data=payload)
-        if len(r.json()) > 0:
-            print(
-                "[{}] {}".format(
-                    r.json().get('id'),
-                    r.json().get('name')))
+        r = req.json()
+    except BaseException:
+        print("Not a valid JSON")
+    else:
+        if r:
+            print("[{}] {}".format(r.get('id'), r.get('name')))
         else:
             print("No result")
-    except:
-        print("No result")
