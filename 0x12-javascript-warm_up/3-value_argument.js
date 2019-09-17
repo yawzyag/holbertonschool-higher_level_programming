@@ -2,7 +2,7 @@
 /*
     js console log #
 */
-var argv = process.argv[2];
+let argv = process.argv[2];
 if (argv) {
   console.log(argv);
 } else {
