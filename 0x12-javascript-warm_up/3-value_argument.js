@@ -2,9 +2,9 @@
 /*
     js console log #
 */
-let argv = process.argv[2];
+const argv = process.argv[2]
 if (argv) {
-  console.log(argv);
+  console.log(argv)
 } else {
-  console.log("No argument");
+  console.log('No argument')
 }
