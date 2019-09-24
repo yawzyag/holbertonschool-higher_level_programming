@@ -8,17 +8,9 @@ request(textA, function (error, response, body) {
   const json = JSON.parse(body);
   const obj = {};
   for (const todo of json) {
-    obj[todo.userId] = '';
-  }
-  let count = 0;
-  for (const key in obj) {
-    for (const todo of json) {
-      if (key === todo.userId.toString() && todo.completed === true) {
-        if (obj[key] > 0) count = obj[key];
-        else count = 0;
-        count++;
-        obj[key] = count;
-      }
+    if (todo.completed === true) {
+      if (!obj[todo.userId]) obj[todo.userId] = 1;
+      else obj[todo.userId]++;
     }
   }
   console.log(obj);
