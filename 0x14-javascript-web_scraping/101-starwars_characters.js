@@ -5,13 +5,14 @@ const textA = `http://swapi.co/api/films/${process.argv[2]}`;
 
 function doRequest (url) {
   return new Promise(function (resolve, reject) {
-    request(url, function (error, res, body) {
-      try {
+    try {
+      request(url, function (error, res, body) {
+        if (error) console.log(error);
         resolve(body);
-      } catch {
-        reject(error);
-      }
-    });
+      });
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 
