@@ -8,7 +8,7 @@ $(() => {
     $.get({
       url,
       success: (result) => {
-        divHello.text(`${result.hello}`);
+        divHello.html(`<p>${result.hello}</p>`);
       }
     });
   });
