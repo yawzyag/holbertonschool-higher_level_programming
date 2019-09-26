@@ -1,4 +1,3 @@
-#!/usr/bin/node
 $(() => {
   const inputBtn = $('INPUT#btn_translate');
   inputBtn.on('click', () => {

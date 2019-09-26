@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 const divUl = $('UL#list_movies');
 $.get({
   url: 'https://swapi.co/api/films/?format=json',

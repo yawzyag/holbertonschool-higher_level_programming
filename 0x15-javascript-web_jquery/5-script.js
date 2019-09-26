@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 const addITem = $('DIV#add_item');
 const ulList = $('UL.my_list');
 

@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 const divHeader = $('DIV#update_header');
 const header = $('header');
 

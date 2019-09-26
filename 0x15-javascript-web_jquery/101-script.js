@@ -1,4 +1,3 @@
-#!/usr/bin/node
 $(() => {
   const addITem = $('DIV#add_item');
   const rmItem = $('DIV#remove_item');

@@ -1,4 +1,3 @@
-#!/usr/bin/node
 window.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('header');
 

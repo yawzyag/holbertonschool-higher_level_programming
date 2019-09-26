@@ -1,4 +1,3 @@
-#!/usr/bin/node
 $(() => {
   const req = (languaje) => {
     const divHello = $('#hello');

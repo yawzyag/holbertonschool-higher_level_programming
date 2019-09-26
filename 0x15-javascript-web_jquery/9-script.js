@@ -1,4 +1,3 @@
-#!/usr/bin/node
 $(() => {
   const divHello = $('#hello');
   const url = 'https://fourtonfish.com/hellosalut/?lang=fr';
