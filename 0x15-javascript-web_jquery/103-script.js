@@ -22,5 +22,4 @@ $(() => {
       req(inputLanguage);
     }
   });
-
 });
